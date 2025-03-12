@@ -4,44 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iTextutors - Connecting Tutors & Students</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #eef2f3;
+            color: #333;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         header {
-            background-color: #007bff;
+            background: linear-gradient(90deg, #007bff, #0056b3);
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0056b3;
+            padding: 15px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffdd57;
         }
         .container {
             width: 80%;
             margin: auto;
-            padding: 20px;
+            padding: 50px 20px;
+            text-align: center;
         }
         .section {
-            margin-bottom: 40px;
-            padding: 20px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 50px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .section:hover {
+            transform: scale(1.03);
         }
         .cta-button {
             display: inline-block;
-            padding: 10px 20px;
-            background: #007bff;
+            padding: 14px 30px;
+            background: #ff4757;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
+            border-radius: 8px;
+            font-size: 20px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background: #e84118;
+            transform: scale(1.05);
+        }
+        .grid-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .grid-item {
+            width: 45%;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+        .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #007bff;
         }
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             background: #343a40;
             color: white;
             margin-top: 20px;
@@ -50,22 +112,43 @@
 </head>
 <body>
     <header>
-        iTextutors - Connecting Tutors & Students
+        <i class="fas fa-chalkboard-teacher"></i> iTextutors - Connecting Tutors & Students
     </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#find-tutor">Find Tutor</a>
+        <a href="#find-student">Find Student</a>
+        <a href="#contact">Contact</a>
+    </nav>
     <div class="container">
-        <div class="section">
+        <div class="section" id="home">
             <h2>Welcome to iTextutors</h2>
-            <p>Looking for a way to cover your daily expenses while gaining valuable teaching experience? Join iTextutors and start earning by connecting with students who need home and online tuition.</p>
+            <p>Connecting tutors with students for home and online tuition. Start your journey today!</p>
         </div>
-        <div class="section">
+        <div class="section" id="how-it-works">
             <h2>How It Works</h2>
             <p>✅ Select a student from our database.<br>
                ✅ Get basic details such as subject, expected earnings, etc.<br>
-               ✅ Pay a reasonable amount and receive the student's number.<br>
+               ✅ Pay a reasonable amount and receive the student’s number.<br>
                ✅ Call and introduce yourself to discuss tuition details.<br>
                ✅ Start teaching and get paid directly by the student.</p>
         </div>
-        <div class="section">
+        <div class="grid-container">
+            <div class="grid-item" id="find-tutor">
+                <i class="fas fa-user-graduate icon"></i>
+                <h3>Looking for a Tutor?</h3>
+                <p>Find the best tutors for your learning needs.</p>
+                <a href="#" class="cta-button">Find a Tutor</a>
+            </div>
+            <div class="grid-item" id="find-student">
+                <i class="fas fa-users icon"></i>
+                <h3>Looking for a Student?</h3>
+                <p>Connect with students who need tuition.</p>
+                <a href="#" class="cta-button">Find a Student</a>
+            </div>
+        </div>
+        <div class="section" id="contact">
             <h2>Contact Us</h2>
             <p>📍 Pashan, Pune, Maharashtra - 411021<br>
                📞 +91 8340761931</p>
@@ -77,3 +160,4 @@
     </footer>
 </body>
 </html>
+
