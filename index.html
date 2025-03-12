@@ -77,6 +77,26 @@
 
 
         }
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            background: #007bff;
+            padding: 50px;
+            color: white;
+        }
+        .stat-box {
+            text-align: center;
+            font-size: 24px;
+        }
+        .stat-number {
+            font-size: 40px;
+            font-weight: bold;
+
+
+
+
+
+        }
         .toggle-btn {
             position: absolute;
             top: 20px;
@@ -221,14 +241,22 @@
     <header>
         <i class="fas fa-chalkboard-teacher"></i> iTextutors - Connecting Tutors & Students
     </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#find-tutor">Find Tutor</a>
-        <a href="#find-student">Find Student</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="container">
+   
+   <div class="container">
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">500+</div>
+                <p>Happy Students</p>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">300+</div>
+                <p>Qualified Tutors</p>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">1000+</div>
+                <p>Hours of Tutoring</p>
+            </div>
+        </div>
         <div class="section" id="contact">
             <h2>Contact Us</h2>
             <div class="form-container">
