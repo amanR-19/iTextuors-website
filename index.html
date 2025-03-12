@@ -11,6 +11,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
+            transition: background 0.5s, color 0.5s;
         }
         body {
             background-color: #eef2f3;
@@ -21,6 +22,10 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        .dark-mode {
+            background-color: #1e1e1e;
+            color: white;
+        }
         header {
             background: linear-gradient(90deg, #007bff, #0056b3);
             color: white;
@@ -29,6 +34,9 @@
             font-size: 28px;
             font-weight: bold;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .dark-mode header {
+            background: linear-gradient(90deg, #444, #222);
         }
         nav {
             display: flex;
@@ -59,47 +67,38 @@
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             margin-bottom: 50px;
-            transition: transform 0.3s ease-in-out;
         }
-        .section:hover {
-            transform: scale(1.03);
+        .dark-mode .section {
+            background: #333;
         }
-        .cta-button {
-            display: inline-block;
-            padding: 14px 30px;
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             background: #ff4757;
             color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 20px;
-            margin-top: 20px;
-            transition: 0.3s;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
         }
-        .cta-button:hover {
-            background: #e84118;
-            transform: scale(1.05);
+        .form-container {
+            text-align: left;
+            max-width: 500px;
+            margin: auto;
         }
-        .grid-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .grid-item {
-            width: 45%;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-        }
-        .grid-item:hover {
-            transform: scale(1.05);
-        }
-        .icon {
-            font-size: 50px;
-            margin-bottom: 15px;
-            color: #007bff;
+        .dark-mode input, .dark-mode textarea {
+            background: #555;
+            color: white;
+            border: 1px solid #777;
         }
         footer {
             text-align: center;
@@ -111,6 +110,7 @@
     </style>
 </head>
 <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
     <header>
         <i class="fas fa-chalkboard-teacher"></i> iTextutors - Connecting Tutors & Students
     </header>
@@ -122,41 +122,28 @@
         <a href="#contact">Contact</a>
     </nav>
     <div class="container">
-        <div class="section" id="home">
-            <h2>Welcome to iTextutors</h2>
-            <p>Connecting tutors with students for home and online tuition. Start your journey today!</p>
-        </div>
-        <div class="section" id="how-it-works">
-            <h2>How It Works</h2>
-            <p>✅ Select a student from our database.<br>
-               ✅ Get basic details such as subject, expected earnings, etc.<br>
-               ✅ Pay a reasonable amount and receive the student’s number.<br>
-               ✅ Call and introduce yourself to discuss tuition details.<br>
-               ✅ Start teaching and get paid directly by the student.</p>
-        </div>
-        <div class="grid-container">
-            <div class="grid-item" id="find-tutor">
-                <i class="fas fa-user-graduate icon"></i>
-                <h3>Looking for a Tutor?</h3>
-                <p>Find the best tutors for your learning needs.</p>
-                <a href="#" class="cta-button">Find a Tutor</a>
-            </div>
-            <div class="grid-item" id="find-student">
-                <i class="fas fa-users icon"></i>
-                <h3>Looking for a Student?</h3>
-                <p>Connect with students who need tuition.</p>
-                <a href="#" class="cta-button">Find a Student</a>
-            </div>
-        </div>
         <div class="section" id="contact">
             <h2>Contact Us</h2>
-            <p>📍 Pashan, Pune, Maharashtra - 411021<br>
-               📞 +91 8340761931</p>
-            <a href="tel:+918340761931" class="cta-button">Call Now</a>
+            <div class="form-container">
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Enter your message" rows="4" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
         </div>
     </div>
     <footer>
         &copy; 2025 iTextutors. All Rights Reserved.
     </footer>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>
