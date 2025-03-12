@@ -1,225 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iTextutors - Connecting Tutors & Students</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            transition: background 0.5s, color 0.5s;
+            background-color: #f8f9fa;
         }
-        body {
-            background-color: #eef2f3;
-            color: #333;
-            animation: fadeIn 1.5s ease-in-out;
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
         }
         .container {
-            width: 90%;
+            width: 80%;
             margin: auto;
-            padding: 50px 20px;
-            text-align: center;
+            padding: 20px;
         }
-        .faq-section {
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .faq-item {
-            background: #f9f9f9;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .faq-answer {
-            display: none;
-            padding: 10px;
-            border-left: 4px solid #007bff;
-            margin-top: 5px;
-        }
-        .whatsapp-chat {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
             color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            margin-top: 10px;
         }
-        .whatsapp-chat i {
-            margin-right: 10px;
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #343a40;
+            color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+    <header>
+        iTextutors - Connecting Tutors & Students
+    </header>
     <div class="container">
-        <div class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>What is iTextutors and how does it work?</h3>
-                <div class="faq-answer">iTextutors is a platform that connects tutors with students for both home and online tuition. Tutors receive student details upon selection and a reasonable service charge.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>What are the charges for getting student details?</h3>
-                <div class="faq-answer">Tutors can access student details for a small fee ranging from ₹597 to ₹999, depending on the student’s grade and requirements.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>How do I register as a tutor?</h3>
-                <div class="faq-answer">You can sign up on our website, select a student, pay a small fee, and start tutoring immediately.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>What subjects can I teach?</h3>
-                <div class="faq-answer">Tutors can teach a wide range of subjects including Mathematics, Science, English, Social Studies, and more for different grade levels.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>Is iTextutors available in my city?</h3>
-                <div class="faq-answer">We operate in major metropolitan areas including Pune, Mumbai, Bangalore, Delhi NCR, Gurgaon, Kolkata, and nearby locations.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>How do students pay tutors?</h3>
-                <div class="faq-answer">Students pay tutors directly based on agreed-upon fees. iTextutors does not manage student-to-tutor payments.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>What happens if I don’t find a student after payment?</h3>
-                <div class="faq-answer">Our system ensures tutors receive suitable student contacts. However, if a match is not found within a reasonable time, support is available.</div>
-            </div>
+        <div class="section">
+            <h2>Welcome to iTextutors</h2>
+            <p>Looking for a way to cover your daily expenses while gaining valuable teaching experience? Join iTextutors and start earning by connecting with students who need home and online tuition.</p>
+        </div>
+        <div class="section">
+            <h2>How It Works</h2>
+            <p>✅ Select a student from our database.<br>
+               ✅ Get basic details such as subject, expected earnings, etc.<br>
+               ✅ Pay a reasonable amount and receive the student's number.<br>
+               ✅ Call and introduce yourself to discuss tuition details.<br>
+               ✅ Start teaching and get paid directly by the student.</p>
+        </div>
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>📍 Pashan, Pune, Maharashtra - 411021<br>
+               📞 +91 8340761931</p>
+            <a href="tel:+918340761931" class="cta-button">Call Now</a>
         </div>
     </div>
-    <a href="https://wa.me/918340761931" class="whatsapp-chat" target="_blank">
-        <i class="fab fa-whatsapp"></i> Live Chat
-    </a>
-    <script>
-        function toggleFAQ(faqItem) {
-            let answer = faqItem.querySelector(".faq-answer");
-            answer.style.display = answer.style.display === "block" ? "none" : "block";
-        }
-    </script>
-</body>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iTextutors - Connecting Tutors & Students</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            transition: background 0.5s, color 0.5s;
-        }
-        body {
-            background-color: #eef2f3;
-            color: #333;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        .container {
-            width: 90%;
-            margin: auto;
-            padding: 50px 20px;
-            text-align: center;
-        }
-        .faq-section {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
-        }
-        .faq-item {
-            background: #f9f9f9;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .faq-answer {
-            display: none;
-            padding: 10px;
-            border-left: 4px solid #007bff;
-            margin-top: 5px;
-        }
-        .whatsapp-chat {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .whatsapp-chat i {
-            margin-right: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>What is iTextutors and how does it work?</h3>
-                <div class="faq-answer">iTextutors is a platform that connects tutors with students for both home and online tuition. Tutors receive student details upon selection and a reasonable service charge.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>What are the charges for getting student details?</h3>
-                <div class="faq-answer">Tutors can access student details for a small fee ranging from ₹597 to ₹999, depending on the student’s grade and requirements.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>How do I register as a tutor?</h3>
-                <div class="faq-answer">You can sign up on our website, select a student, pay a small fee, and start tutoring immediately.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>What subjects can I teach?</h3>
-                <div class="faq-answer">Tutors can teach a wide range of subjects including Mathematics, Science, English, Social Studies, and more for different grade levels.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>Is iTextutors available in my city?</h3>
-                <div class="faq-answer">We operate in major metropolitan areas including Pune, Mumbai, Bangalore, Delhi NCR, Gurgaon, Kolkata, and nearby locations.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>How do students pay tutors?</h3>
-                <div class="faq-answer">Students pay tutors directly based on agreed-upon fees. iTextutors does not manage student-to-tutor payments.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <h3>What happens if I don’t find a student after payment?</h3>
-                <div class="faq-answer">Our system ensures tutors receive suitable student contacts. However, if a match is not found within a reasonable time, support is available.</div>
-            </div>
-        </div>
-    </div>
-    <a href="https://wa.me/918340761931" class="whatsapp-chat" target="_blank">
-        <i class="fab fa-whatsapp"></i> Live Chat
-    </a>
-    <script>
-        function toggleFAQ(faqItem) {
-            let answer = faqItem.querySelector(".faq-answer");
-            answer.style.display = answer.style.display === "block" ? "none" : "block";
-        }
-    </script>
+    <footer>
+        &copy; 2025 iTextutors. All Rights Reserved.
+    </footer>
 </body>
 </html>
-
