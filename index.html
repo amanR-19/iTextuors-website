@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iTextutors - Connecting Tutors & Students</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -16,133 +17,95 @@
         body {
             background-color: #eef2f3;
             color: #333;
-            animation: fadeIn 1s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .dark-mode {
-            background-color: #1e1e1e;
-            color: white;
-        }
-        header {
-            background: linear-gradient(90deg, #007bff, #0056b3);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .dark-mode header {
-            background: linear-gradient(90deg, #444, #222);
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #0056b3;
-            padding: 15px 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffdd57;
+            animation: fadeIn 1.5s ease-in-out;
         }
         .container {
-            width: 80%;
+            width: 90%;
             margin: auto;
             padding: 50px 20px;
             text-align: center;
         }
-        .section {
+        .faq-section {
             background: white;
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin-bottom: 50px;
+            margin-top: 50px;
         }
-        .dark-mode .section {
-            background: #333;
-        }
-        .toggle-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #ff4757;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-        .form-container {
-            text-align: left;
-            max-width: 500px;
-            margin: auto;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
+        .faq-item {
+            background: #f9f9f9;
+            padding: 15px;
             margin: 10px 0;
-            border: 1px solid #ccc;
             border-radius: 5px;
+            cursor: pointer;
         }
-        .dark-mode input, .dark-mode textarea {
-            background: #555;
-            color: white;
-            border: 1px solid #777;
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            margin-top: 5px;
         }
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #343a40;
+        .whatsapp-chat {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
             color: white;
-            margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .whatsapp-chat i {
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-    <header>
-        <i class="fas fa-chalkboard-teacher"></i> iTextutors - Connecting Tutors & Students
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#find-tutor">Find Tutor</a>
-        <a href="#find-student">Find Student</a>
-        <a href="#contact">Contact</a>
-    </nav>
     <div class="container">
-        <div class="section" id="contact">
-            <h2>Contact Us</h2>
-            <div class="form-container">
-                <form>
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                    <label for="message">Message</label>
-                    <textarea id="message" placeholder="Enter your message" rows="4" required></textarea>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>What is iTextutors and how does it work?</h3>
+                <div class="faq-answer">iTextutors is a platform that connects tutors with students for both home and online tuition. Tutors receive student details upon selection and a reasonable service charge.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>What are the charges for getting student details?</h3>
+                <div class="faq-answer">Tutors can access student details for a small fee ranging from ₹597 to ₹999, depending on the student’s grade and requirements.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>How do I register as a tutor?</h3>
+                <div class="faq-answer">You can sign up on our website, select a student, pay a small fee, and start tutoring immediately.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>What subjects can I teach?</h3>
+                <div class="faq-answer">Tutors can teach a wide range of subjects including Mathematics, Science, English, Social Studies, and more for different grade levels.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>Is iTextutors available in my city?</h3>
+                <div class="faq-answer">We operate in major metropolitan areas including Pune, Mumbai, Bangalore, Delhi NCR, Gurgaon, Kolkata, and nearby locations.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>How do students pay tutors?</h3>
+                <div class="faq-answer">Students pay tutors directly based on agreed-upon fees. iTextutors does not manage student-to-tutor payments.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>What happens if I don’t find a student after payment?</h3>
+                <div class="faq-answer">Our system ensures tutors receive suitable student contacts. However, if a match is not found within a reasonable time, support is available.</div>
             </div>
         </div>
     </div>
-    <footer>
-        &copy; 2025 iTextutors. All Rights Reserved.
-    </footer>
+    <a href="https://wa.me/918340761931" class="whatsapp-chat" target="_blank">
+        <i class="fab fa-whatsapp"></i> Live Chat
+    </a>
     <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
+        function toggleFAQ(faqItem) {
+            let answer = faqItem.querySelector(".faq-answer");
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
         }
     </script>
 </body>
