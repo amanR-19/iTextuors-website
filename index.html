@@ -357,6 +357,34 @@
 
 
 
+
+<script>
+        function animateNumbers() {
+            const numbers = document.querySelectorAll(".stat-number");
+            numbers.forEach(num => {
+                let count = 0;
+                const updateCount = () => {
+                    const target = +num.getAttribute("data-count");
+                    const speed = target / 100;
+                    if (count < target) {
+                        count += speed;
+                        num.innerText = Math.floor(count);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        num.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+        window.onload = animateNumbers;
+    </script>
+
+
+
+
+
+
 <div class="container">
         <div class="stats-container">
             <div class="stat-box">
